@@ -4,8 +4,9 @@ import { User } from "../types/User";
 export interface IUserModel extends User, Document {}
 
 const UserSchema: Schema = new Schema({
-  fname: { type: String, required: true },
-  lname: { type: String, required: true },
+  uid: { type: String, required: true, unique: true },
+  fname: { type: String },
+  lname: { type: String },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
 });
