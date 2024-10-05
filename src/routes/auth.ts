@@ -5,7 +5,7 @@ import { loginUser, registerUser } from "../controllers/authController";
 const router = express.Router();
 
 // Public routes
-router.post("/register", async (req, res, next) => {
+router.post("/signup", async (req, res, next) => {
   try {
     await registerUser(req, res);
   } catch (error) {
