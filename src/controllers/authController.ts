@@ -8,7 +8,7 @@ dotenv.config();
 
 // Register User
 export const registerUser = async (req: Request, res: Response) => {
-  const { fname, lname, email, password } = req.body;
+  const { email, uid, password } = req.body;
 
   try {
     const userExists = await UserModel.findOne({ email });
@@ -20,10 +20,9 @@ export const registerUser = async (req: Request, res: Response) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = new UserModel({
-      fname,
-      lname,
       email,
       password: hashedPassword,
+      uid,
     });
 
     await newUser.save();

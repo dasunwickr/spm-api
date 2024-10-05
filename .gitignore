@@ -36,6 +36,7 @@ Thumbs.db
 *.local
 .cache/
 *.lock
+*.lock.json
 
 # TypeScript specific
 *.tsbuildinfo
